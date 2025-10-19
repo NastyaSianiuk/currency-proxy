@@ -3,6 +3,10 @@ import requests
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "Currency Proxy Server is running! ✅ Use /usd_to_byn to get the USD→BYN rate."
+
 @app.route("/usd_to_byn")
 def usd_to_byn():
     try:
@@ -14,4 +18,4 @@ def usd_to_byn():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=3000)
