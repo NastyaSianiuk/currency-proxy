@@ -11,7 +11,7 @@ def home():
 def usd_to_byn():
     try:
         url = "https://www.nbrb.by/api/exrates/rates/usd?parammode=2"
-        response = requests.get(url, timeout=5)
+        response = requests.get(url, timeout=20)
         data = response.json()
         return jsonify({"Cur_OfficialRate": data["Cur_OfficialRate"]})
     except Exception as e:
